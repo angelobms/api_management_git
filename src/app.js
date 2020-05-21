@@ -14,18 +14,18 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  const { tittle, url, techs } = request.body;
+  const { url, title, techs } = request.body;
 
-  const repository = { id: uuid(), tittle, url, techs, likes: 0 };
+  const repository = { id: uuid(), url, title, techs, likes: 0, };
 
   repositories.push(repository);
 
-  return response.status(200).json(repository);
+  return response.json(repository);
 });
 
 app.put("/repositories/:id", (request, response) => {
   const { id } = request.params;
-  const { tittle, url, techs } = request.body;
+  const { url, title, techs } = request.body;
 
   const repositoryIndex = repositories.findIndex(repository => repository.id == id);
 
@@ -35,10 +35,10 @@ app.put("/repositories/:id", (request, response) => {
   
   const repository = {
     id, 
-    tittle,
+    title,
     url,
     techs,
-    like: 0,
+    likes: 0,
   }
 
   repositories[repositoryIndex] = repository;
