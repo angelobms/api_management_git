@@ -1,6 +1,6 @@
-# Project Application Management Git
+# Project Application Management Git - Back-end
 
- Application for manage GitHub repositories developed with NodeJS.
+ Application programming interface for manage GitHub repositories developed with NodeJS.
 
  
  
